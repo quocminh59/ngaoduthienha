@@ -66,20 +66,20 @@
                             <div class="slider-track"></div>
                             @if (request()->budget_min)
                             <div class="ranger-wrap">
-                                <input type="range" step="100" min="0" max="1500" value="{{ request()->budget_min }}" id="slider-1" oninput="slideOne()">
+                                <input type="range" step="500000" min="0" max="20000000" value="{{ request()->budget_min }}" id="slider-1" oninput="slideOne()">
                             </div>
                             @else
                             <div class="ranger-wrap">
-                                <input type="range" step="100" min="0" max="1500" value="200" id="slider-1" oninput="slideOne()">
+                                <input type="range" step="500000" min="0" max="20000000" value="1000000" id="slider-1" oninput="slideOne()">
                             </div>
                             @endif
                             @if (request()->budget_max)
                             <div class="ranger-wrap">
-                                <input type="range" step="100" min="0" max="1500" value="{{ request()->budget_max }}" id="slider-2" oninput="slideTwo()">
+                                <input type="range" step="500000" min="0" max="20000000" value="{{ request()->budget_max }}" id="slider-2" oninput="slideTwo()">
                             </div>
                             @else
                             <div class="ranger-wrap">
-                                <input type="range" step="100" min="0" max="1500" value="1200" id="slider-2" oninput="slideTwo()">
+                                <input type="range" step="500000" min="0" max="20000000" value="1000000" id="slider-2" oninput="slideTwo()">
                             </div>
                             @endif
                         </div>

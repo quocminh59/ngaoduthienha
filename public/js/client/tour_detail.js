@@ -215,7 +215,10 @@ $(document).ready(function () {
     };
     $("#number_people").change(function () {
         let totalPrice = $(this).data("price") * $(this).val();
-        $("#total").text(`$${totalPrice.toFixed(2)}`);
+        // totalPrice.toLocaleString('it-IT', {style : 'currency', currency : 'VND'}).format('1000');
+        // $("#total").text(`$${totalPrice.toFixed(2)}`);
+        totalPrice = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(totalPrice)
+        $("#total").text(`${totalPrice}`);
         data.number_people = $(this).val();
         data.total_price = totalPrice;
     });

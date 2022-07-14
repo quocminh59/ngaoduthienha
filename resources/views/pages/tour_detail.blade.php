@@ -91,7 +91,7 @@
                     <div class="interactive">
                         <div class="btn-descript orange">Descriptions</div>
                         <div class="btn-addtional">Additional Info</div>
-                        <div class="btn-review">Reviews(54)</div>
+                        <div class="btn-review">Reviews</div>
                     </div>
                     <div class="ct-detail" id="description">
                         @if (empty($tour->description))
@@ -307,7 +307,7 @@
 
             <div class="col-lg-4 checkout">
                 <div class="chkout-top">
-                    <p>from <span>${{ number_format($tour->price, 2) }}</span></p>
+                    <p>from <span>{{ number_format($tour->price, 0, '', ',') }} đ</span></p>
                 </div>
                 <div class="chkout-bot">
                     <div class="ckhout-bot-info">
@@ -335,7 +335,7 @@
                         </div>
                         <div class="total">
                             <span>Total</span>
-                            <strong id="total">${{ number_format($tour->price, 2) }}</strong>
+                            <strong id="total">{{ number_format($tour->price, 0, '', ',') }} đ</strong>
                             <input type="text" class="d-none" name="total_price" id="total_price">
                         </div>
                         <input type="text" name="duration" id="duration" class="d-none"
@@ -381,7 +381,7 @@
                                     <span>{{ $tourRelated->convertDuration($tourRelated->duration) }}</span>
                                 </div>
                                 <div class="sl2-if-cost">from
-                                    <strong>${{ number_format($tourRelated->price, 2) }}</strong></div>
+                                    <strong>{{ number_format($tourRelated->price, 0, '', ',') }} đ</strong></div>
                             </div>
                         </div>
                     </div>

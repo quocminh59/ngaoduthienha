@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\PayPalController;
 
 
 
@@ -43,6 +44,12 @@ Route::post('/contacts/store', [ContactController::class, 'store'])->name('conta
 
 Route::post('/reviews/store/{tourId}', [ReviewController::class, 'store'])->name('review.store');
 Route::post('/reviews/{tourId}/fetch-data', [ReviewController::class, 'fetchData'])->name('review.fetch');
+
+// Route thanh toan paypal
+// Route::get('create-transaction', [PayPalController::class, 'createTransaction'])->name('createTransaction');
+Route::get('process-transaction', [PayPalController::class, 'processTransaction'])->name('processTransaction');
+Route::get('success-transaction', [PayPalController::class, 'successTransaction'])->name('successTransaction');
+Route::get('cancel-transaction', [PayPalController::class, 'cancelTransaction'])->name('cancelTransaction');
 
 // Route authenticate admin
 Auth::routes(['register' => false]);

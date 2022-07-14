@@ -14,6 +14,11 @@ class Booking extends Model
 {
     use HasFactory;
 
+    const BOOKING_COMPLETED = 4;
+    const BOOKING_CANCELD = 3;
+    const PAID = 2;
+    const UNPAID = 1;
+
     protected $guarded = ['id'];
 
     public function tour()
@@ -95,7 +100,7 @@ class Booking extends Model
             $this->generateBookingCode($model->id);
             $this->resetSession();
             $this->sendMailBooking($model->id);
-            return 1;
+            return $model;
         } catch (\Throwable $th) {
             return 0;
         }
@@ -167,6 +172,13 @@ class Booking extends Model
             $booking->payment_status = $request->status;
             $booking->save();
         } 
+    }
+
+    public function changeStatusPayment($status, $id)
+    {
+        $booking = $this->getBookingById($id);
+        $booking->payment_status = $status;
+        $booking->save();
     }
 
     public function changeStatus($status, $id)

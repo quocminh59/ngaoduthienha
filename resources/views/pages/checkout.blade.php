@@ -70,7 +70,7 @@
                                         <label>Your Adress</label>
                                         <input type="text" name="address" placeholder="Your Address">
                                     </div>
-                                    <div class="info-user">
+                                    {{--  <div class="info-user">
                                         <div class="wrap-input-1">
                                             <label>City </label>
                                             <input type="text" name="city" placeholder="Your City">
@@ -93,7 +93,7 @@
                                             <label>Special Requirement</label>
                                             <textarea name="note" placeholder="Special Requirement"></textarea>
                                         </div>
-                                    </div>
+                                    </div>  --}}
                                 </div>
                             </div>
                         </div>
@@ -138,7 +138,8 @@
                         </div>
                         <div class="total">
                             <span>Total</span>
-                            <strong>${{ $booking['total_price'] }}</strong>
+                            <strong>{{ $booking['total_price'] }}</strong>
+                            {{--  <strong>{{ number_format($booking['total_price'], 0, '', ',') }} đ</strong>  --}}
                         </div>
                     </div>
                 </div>
@@ -152,20 +153,13 @@
                                 <p>Pay securely—we use SSL encryption to keep your data safe</p>
                             </div>
                             <div class="part-section">
+                                
                                 <div class="wrap-radio">
-                                    <input type="radio" name="payment_method" value="1">
-                                    <label>Credit card</label>
-                                    <img src="assets/images/logobank-1.png">
-                                </div>
-                                <div class="wrap-radio">
-                                    <input type="radio" name="payment_method" value="2">
+                                    <input type="radio" name="payment_method" value="2" checked>
                                     <label>Paypal</label>
                                     <img src="assets/images/logobank-2.png">
                                 </div>
-                                <div class="wrap-radio">
-                                    <input type="radio" name="payment_method" value="3" checked>
-                                    <label>Pay in cash</label>
-                                </div>
+                                
                             </div>
                             <div class="part-section">
                                 <ul>

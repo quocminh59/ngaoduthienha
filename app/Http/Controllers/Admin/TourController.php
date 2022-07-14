@@ -78,4 +78,16 @@ class TourController extends Controller
         $tour = $this->tour->getTourById($id);
         $tour->delete();
     }
+
+    public function test()
+    {
+        // $tour = Tour::where('destination_id', 3)->get()->map(function(Tour $tour) {
+        //     $tour->price = $tour->price . '-minh';
+        //     return $tour;
+        // });
+        $tour = Tour::where('destination_id', 3)
+                        ->get()
+                        ->groupBy('duration');
+        dd($tour);
+    }
 }

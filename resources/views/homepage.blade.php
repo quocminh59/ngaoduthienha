@@ -30,15 +30,15 @@
                     <form action="{{ route('home.search') }}" class="form-search">
                         
                         <div class="form-search-item">
-                            <h4>Discover beautiful Vietnam</h4>
+                            <h4>{{ __('Khám phá vẻ đẹp Việt Nam') }}</h4>
                         </div>
                         <div class="form-search-item wrap-input">
                             <img src="{{ asset('assets/icons/outline/search.png') }}">
-                            <input type="text" name="title" placeholder="Tour name">
+                            <input type="text" name="title" placeholder="Tên tour">
                         </div>
                         <div class="form-search-item wrap-input">
                             <img src="{{ asset('assets/icons/outline/shape.png') }}">
-                            <input type="text" name="destination" placeholder="Destination">
+                            <input type="text" name="destination" placeholder="Điểm đến">
                         </div>
                         <div class="form-search-item wrap-input">
                             <img src="{{ asset('assets/icons/outline/flag.png') }}">
@@ -51,11 +51,11 @@
                         </div>
                         <div class="form-search-item wrap-input">
                             <img src="{{ asset('assets/icons/outline/date.png') }}">
-                            <input type="number" name="duration" placeholder="Duration" min="1">
+                            <input type="number" name="duration" placeholder="Số ngày đi" min="1">
                         </div>
                         <button class="form-search-item wrap-submit border" type="submit">
                             <img src="{{ asset('assets/icons/outline/search-2.png') }}">
-                            <span>Search</span>
+                            <span>Tìm kiếm</span>
                         </button>
                     </form>
                 </div>
@@ -63,12 +63,12 @@
                     <div class="wrap-features-1">
                         <div class="wrap-ft-1-top">
                             <img src="assets/images/Ellipse-13.png">
-                            <span>Features</span>
+                            <span>{{ __("Nổi bật") }}</span>
                         </div>
                         <div class="wrap-ft-1-bot">
                             <span>200+ <p>tour</p></span>
-                            <span>100+ <p>destination</p></span>
-                            <span>8+ <p>type of tour</p></span>
+                            <span>100+ <p>điểm đến</p></span>
+                            <span>8+ <p>loại tour</p></span>
                         </div>
                     </div>
                 </div>
@@ -91,26 +91,17 @@
                 <div class="col-12 col-sm-12 col-lg-6">
                     <div class="wrap-dcr-content">
                         <div class="dcr-title">
-                            <p>With <span>NgaoduVietnam</span>, immerses you in majestic space and unique cultural
-                                features</p>
+                            <p>Cùng với <span>NgaoduVietnam</span>, đắm chìm trong không gian hùng vĩ và những nét văn hóa đặc sắc</p>
                         </div>
                         <div class="dcr-content">
                             <img src="assets/icons/outline/water.png" alt="">
                             <div class="dst-ct-detail">
                                 <div class="ct-detail-top">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus viverra nuQlla eget
-                                    sed odio.
-                                    Vulputate risus faucibus sem non, feugiat nec consequat, montes. Elementum
-                                    scelerisque
-                                    phasellus donec lectus ullamcorper faucibus. Malesuada et adipiscing molestie
-                                    egestas leo
-                                    ut.
+                                    Tại đây có tất cả những gì bạn cần để có một chuyến đi vui vẻ, đáng nhớ cùng gia đình và bạn bè. Bạn có thể ngắm nhìn cảnh sắc khắp mọi nơi trên đất nước Việt Name
                                 </div>
                                 <br>
                                 <div class="ct-detail-bottom">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus viverra nuQlla eget
-                                    sed odio.
-                                    Vulputate risus faucibus sem non, feugiat nec consequat, montes.
+                                    Làm việc với phong cách chuyên nghiệp, chúng tôi đảm bảo sẽ giúp bạn tìm được tour du lịch một cách nhanh chóng, thuận lợi. Đảm bảo bạn sẽ có trải nghiệm sử dụng dịch vụ một cách tốt nhất
                                 </div>
                             </div>
                         </div>
@@ -121,7 +112,7 @@
         <div class="slide-type-1">
             <div class="slide-header">
                 <div class="sl-hd-title">
-                    Discover fascinating destinations
+                    Khám phá các địa điểm du lịch hấp dẫn
                 </div>
                 <button>View all</button>
             </div>
@@ -146,10 +137,10 @@
             </div>
         </div>
 
-        <div class="slide-type-2">
+        {{--  <div class="slide-type-2">
             <div class="slide-header">
                 <div class="sl-hd-title">
-                    Attractive tour and interesting experiences
+                    Tour du lịch hấp dẫn và những trải nghiệm thú vị
                 </div>
                 <button>View all</button>
             </div>
@@ -193,12 +184,12 @@
                     </div>
                 </div>
             </div>
-        </div> <!-- end slide 2 -->
+        </div> <!-- end slide 2 -->  --}}
 
         <div class="slide-type-2">
             <div class="slide-header">
                 <div class="sl-hd-title">
-                    Attractive tour and interesting experiences
+                    Tour du lịch hấp dẫn và những trải nghiệm thú vị
                 </div>
                 <button>View all</button>
             </div>
@@ -232,7 +223,7 @@
                                         <img src="assets/icons/outline/time.png" alt="">
                                         <span>{{ $tour->convertDuration($tour->duration) }}</span>
                                     </div>
-                                    <div class="sl2-if-cost">from <strong>${{ $tour->price }}</strong></div>
+                                    <div class="sl2-if-cost">from <strong>{{ number_format($tour->price, 0, '', ',') }} đ</strong></div>
                                 </div>
                             </div>
                             @endforeach

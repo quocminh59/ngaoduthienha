@@ -137,7 +137,7 @@
     </div>
 
     @if ($booking->status !== 'Completed')
-    <div class="wrap-status" style="width: 97%; margin-left: 12px;">
+    {{--  <div class="wrap-status" style="width: 97%; margin-left: 12px;">
         <form action="{{ route('booking.status', $booking->id) }}" method="post">
             @csrf
             <div class="col-sm-4">
@@ -155,7 +155,7 @@
                 <input type="submit" class="btn btn-success" style="width: 200px; margin: 20px 0 20px 0;"  value="Update">
             </div>
         </form>
-    </div>
+    </div>  --}}
     @endif
 @endsection
 

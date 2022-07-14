@@ -46,11 +46,14 @@ class BookingController extends Controller
 
     public function store(BookingRequest $request)
     {
+       
         if(Session('Booking')) {
             $booking = Session('Booking');
+            $totalPrice = $booking['total_price'];
             $result = $this->booking->saveRecord($request, $booking);
-            if($result == 1) {
-                return redirect()->route('thanks');
+            if(!empty($result)) {
+                //return redirect()->route('thanks');
+                return redirect()->route('processTransaction', ['totalPrice' => $totalPrice, 'bookingID' => $result->id]);
             }
             return redirect()->back()->with('error', 'Booking fail');
         }

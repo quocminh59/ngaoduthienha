@@ -1,4 +1,4 @@
-@if ($data->payment_status == 'unpaid')
+{{--  @if ($data->payment_status == 'unpaid')
     @if ($data->status == 'Cancel')
         <strong>unpaid</strong>
     @else
@@ -22,4 +22,10 @@
             })
         }
     })
-</script>
+</script>  --}}
+
+@if ($data->payment_status == 'unpaid')
+    <strong style="color: red;">Unpaid</strong>
+@else
+    <strong style="color: green;">Paid</strong>
+@endif

@@ -32,7 +32,7 @@
                 <option selected disabled hidden>Select status</option>
                 <option value="">All</option>
                 <option value="1">New</option>
-                <option value="2">Confirmed</option>
+                {{--  <option value="2">Confirmed</option>  --}}
                 <option value="3">Cancelled</option>
                 <option value="4">Complete</option>
             </select>
